@@ -5,11 +5,11 @@ addHook("PlayerThink", function(player)
 if SPMMENU == false    
 CONS_Printf(player, "SPMMENU on")
 SPMMENU = true
-S_StartSound(player.mo, SFX_SPMLINETURNone, player)
+S_StartSound(player.mo, SFX_SPMLINETURNone, player) --fix this
 elseif SPMMENU == true then
     CONS_Printf(player, "SPMMENU off")
    SPMMENU = false  
-   S_StartSound(player.mo, SFX_SPMSYSMENUCANCELone, player)
+   S_StartSound(player.mo, SFX_SPMSYSMENUCANCELone, player) --fix this
 end
 end
 end)
@@ -26,5 +26,6 @@ if SPMMENU == false then return end
 	v.draw(0, 10, patch, V_SNAPTORIGHT, v.getColormap("sonic"))
 	
 end
+
 
 addHook("HUD", drawSPMMENU, "game")
